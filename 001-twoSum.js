@@ -3,9 +3,9 @@
 // 你可以假設每種輸入只會對應一個答案。但是，你不能重複利用這個數組中同樣的元素。
 // ==========================================================================
 var twoSum = function(nums, target) {
-    for(var i = 0; i < nums.length-1; i++){
-        for(var j = i+1; j < nums.length; i++){
-            if(nums[i] + nums[j] === target ){
+    for(var i = 0; i < nums.length-1; i++){ //for迴圈跑3次(2,7,11) 第4次(15)不用跑因為前面每個都會對過15
+        for(var j = i+1; j < nums.length; i++){ //跑第二層for回圈 用第一層的i去對第二層的每個J
+            if(nums[i] + nums[j] === target ){ //一旦和為target 就return
                 return [i, j];
             }
         }
